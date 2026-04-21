@@ -226,8 +226,7 @@ Run the following SQL files in BigQuery:
 
 Use the resulting BigQuery tables as data sources for dashboard visualizations.
 
-
-
+---
 
 ## Business Value
 
