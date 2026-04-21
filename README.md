@@ -169,13 +169,24 @@ python scripts/check_data.py
 
 Upload the cleaned CSV file to the project GCS bucket.
 
+```bash
+gsutil cp data/processed/cleaned_retail_data.csv gs://your-bucket-name/
+```
+
 ### 4. Load data into BigQuery
 
 Create or load the cleaned dataset into the target BigQuery table.
 
+```bash
+bq load --autodetect --source_format=CSV --skip_leading_rows=1 \
+your-project-id:uk_ecommerce.cleaned_retail_data \
+gs://your-bucket-name/cleaned_retail_data.csv
+
+```
+
 ### 5. Run analytical SQL queries
 
-Run the SQL files in the `sql/` folder to create reporting tables:
+Run the following SQL files in BigQuery:
 
 - `sql/sales_by_country.sql`
 - `sql/monthly_revenue.sql`
@@ -183,6 +194,37 @@ Run the SQL files in the `sql/` folder to create reporting tables:
 ### 6. Connect BigQuery tables to Looker Studio
 
 Use the resulting BigQuery tables as data sources for dashboard visualizations.
+
+## Requirements
+
+- Python 3.10+
+- Google Cloud SDK
+- BigQuery access
+- A Google Cloud project
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/joecjoecjoec/uk-ecommerce-analytics-pipeline.git
+cd uk-ecommerce-analytics-pipeline
+```
+Install Python dependencies:
+
+```bash
+pip install pandas google-cloud-storage google-cloud-bigquery python-dotenv
+```
+## Environment Variables
+Create a .env file in the project root:
+
+```env
+GCP_PROJECT_ID=your-project-id
+GCS_BUCKET=your-bucket-name
+BQ_DATASET=uk_ecommerce
+GOOGLE_APPLICATION_CREDENTIALS=creds/your-service-account.json
+```
+
 
 ## Business Value
 
