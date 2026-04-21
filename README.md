@@ -148,6 +148,37 @@ Shows how revenue changes over time.
 **Dashboard screenshot**  
 ![Dashboard](dashboard/dashboard.png)
 
+
+## Requirements
+
+- Python 3.10+
+- Google Cloud SDK
+- BigQuery access
+- A Google Cloud project
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/joecjoecjoec/uk-ecommerce-analytics-pipeline.git
+cd uk-ecommerce-analytics-pipeline
+```
+Install Python dependencies:
+
+```bash
+pip install pandas google-cloud-storage google-cloud-bigquery python-dotenv
+```
+## Environment Variables
+Create a .env file in the project root:
+
+```env
+GCP_PROJECT_ID=your-project-id
+GCS_BUCKET=your-bucket-name
+BQ_DATASET=uk_ecommerce
+GOOGLE_APPLICATION_CREDENTIALS=creds/your-service-account.json
+```
+
 ## How to Run
 
 ### 1. Clean the raw dataset
@@ -194,36 +225,6 @@ Run the following SQL files in BigQuery:
 ### 6. Connect BigQuery tables to Looker Studio
 
 Use the resulting BigQuery tables as data sources for dashboard visualizations.
-
-## Requirements
-
-- Python 3.10+
-- Google Cloud SDK
-- BigQuery access
-- A Google Cloud project
-
-## Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/joecjoecjoec/uk-ecommerce-analytics-pipeline.git
-cd uk-ecommerce-analytics-pipeline
-```
-Install Python dependencies:
-
-```bash
-pip install pandas google-cloud-storage google-cloud-bigquery python-dotenv
-```
-## Environment Variables
-Create a .env file in the project root:
-
-```env
-GCP_PROJECT_ID=your-project-id
-GCS_BUCKET=your-bucket-name
-BQ_DATASET=uk_ecommerce
-GOOGLE_APPLICATION_CREDENTIALS=creds/your-service-account.json
-```
 
 
 ## Business Value
