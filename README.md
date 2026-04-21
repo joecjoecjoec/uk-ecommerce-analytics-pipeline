@@ -87,15 +87,6 @@ Raw CSV
 ├── dbt/
 └── terraform/
 ```
-Technologies Used
-	•	Python
-	•	Pandas
-	•	Google Cloud Storage
-	•	BigQuery
-	•	SQL
-	•	dbt
-	•	Terraform
-	•	Looker Studio
 
 ⸻
 
