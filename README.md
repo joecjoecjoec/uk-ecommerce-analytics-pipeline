@@ -228,6 +228,7 @@ Use the resulting BigQuery tables as data sources for dashboard visualizations.
 
 
 
+
 ## Business Value
 
 This pipeline helps transform raw e-commerce transactions into decision-ready reporting assets.
